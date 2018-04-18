@@ -46,8 +46,8 @@ dependencies {
 // 这个version影响后面的引用
 version = "1.0.0"
 
-def siteUrl = 'https://github.com/githubBanana/ApkUpdate'      // 项目的主页
-def gitUrl = 'https://github.com/githubBanana/ApkUpdate.git'   // Git仓库的url
+def siteUrl = 'https://github.com/SimonRepo/SplashDemo'      // 项目的主页
+def gitUrl = 'https://github.com/SimonRepo/SplashDemo.git'   // Git仓库的url
 group = "com.xs.splashview"                           // Maven Group ID for the artifact，一般填你唯一的包名
 install {
     repositories.mavenInstaller {
