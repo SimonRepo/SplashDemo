@@ -1,6 +1,8 @@
 package com.xs.splashview;
 
 import android.app.Activity;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
@@ -128,9 +130,9 @@ public class XsSplashHelper {
         }
     }
 
-    public static void downLoadSplash(Activity context,String imgUrl) {
+    public static void downLoadSplash(Activity context,String imgUrl,String link) {
         DownLoadTask task = new DownLoadTask(context);
-        task.execute(imgUrl);
+        task.execute(imgUrl,link);
     }
 
     private static class DownLoadTask extends AsyncTask<String,Void,Integer> {
@@ -164,6 +166,10 @@ public class XsSplashHelper {
                 bos = new BufferedOutputStream(new FileOutputStream(localFile));
                 bitmap.compress(Bitmap.CompressFormat.JPEG, 80, bos);
 
+                SharedPreferences.Editor editor = activity.getSharedPreferences("splashSP", Context.MODE_PRIVATE).edit();
+                editor.putString("splashLink", urls[1]);
+                editor.apply();
+                
             } catch (MalformedURLException e) {
                 e.printStackTrace();
             } catch (IOException e) {

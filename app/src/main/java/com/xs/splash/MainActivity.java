@@ -3,7 +3,6 @@ package com.xs.splash;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.ScaleAnimation;
 
@@ -22,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
         myAnimation_Scale.setDuration(1000);
 
         XsSplashHelper.getBuilder(this)
-                .link("http://www.baidu.com")
+                .link("https://simonrepo.github.io")
 //                .defaultRes(R.mipmap.ic_launcher)//若不设置默认图 且本地无广告的情况下 则不会显示广告页
 //                .countDown(5)//若不设置 则默认倒计时3S
 //                .textSizeDp(10)
@@ -44,13 +43,9 @@ public class MainActivity extends AppCompatActivity {
                     }
                 })
                 .build().show();
-    }
 
-    public void showSplash(View view) {
-        try {
-            XsSplashHelper.downLoadSplash(this,"http://pic.58pic.com/58pic/14/64/56/25h58PIC3eG_1024.jpg");
-        } catch (Exception e){
-        }
+        XsSplashHelper.downLoadSplash(this,"http://pic.58pic.com/58pic/14/64/56/25h58PIC3eG_1024.jpg",
+                "https://simonrepo.github.io");
     }
 
     @Override

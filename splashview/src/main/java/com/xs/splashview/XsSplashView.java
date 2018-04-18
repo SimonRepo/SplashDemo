@@ -2,6 +2,7 @@ package com.xs.splashview;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.GradientDrawable;
@@ -63,7 +64,9 @@ public class XsSplashView extends FrameLayout {
     }
 
     public void setLink(String link){
-        this.link = link;
+        this.link = TextUtils.isEmpty(link) ?
+                context.getSharedPreferences("splashSP", Context.MODE_PRIVATE).getString("splashLink","")
+                : link;
     }
 
     public void setCountdown(int countdown){

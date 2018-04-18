@@ -9,7 +9,6 @@
         android:layout_centerInParent="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="广告闪页"
-        android:onClick="showSplash" />
+        android:text="广告闪页" />
 
 </RelativeLayout>
