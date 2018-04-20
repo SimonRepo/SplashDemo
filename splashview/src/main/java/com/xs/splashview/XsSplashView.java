@@ -107,13 +107,14 @@ public class XsSplashView extends FrameLayout {
     }
 
     public void show(){
-        this.addView(tvCountDown,setTextViewData(context));
 
         ViewGroup viewGroup = context.getWindow().getDecorView().findViewById(android.R.id.content);
         if (viewGroup == null || viewGroup.getChildCount() == 0)
             return;
         if (!isNeedToContinue())
             return;
+
+        this.addView(tvCountDown,setTextViewData(context));
 
         context.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
@@ -170,11 +171,13 @@ public class XsSplashView extends FrameLayout {
 
     private boolean isNeedToContinue(){
         String filePath = context.getFilesDir().getAbsolutePath().toString() + "/splash.jpg";
-        if (!isExistLocalSplashFile(filePath) && (defaultSplashRes == null || defaultSplashRes == 0)){
-            return false;
-        } else {
+        if (isExistLocalSplashFile(filePath)){
             return true;
         }
+        if (defaultSplashRes != null && defaultSplashRes != 0){
+            return true;
+        }
+        return false;
     }
 
     private Runnable runnable = new Runnable() {
@@ -202,13 +205,17 @@ public class XsSplashView extends FrameLayout {
             dismissAnimation.setDuration(1000);
         }
         setAnimation(dismissAnimation);
-        viewGroup.removeView(this);
+        if (viewGroup != null)
+            viewGroup.removeView(this);
+
+        XsSplashHelper.clear();
     }
 
     public void forceDismiss(){
         XsSplashView.this.removeCallbacks(runnable);
         ViewGroup viewGroup = (ViewGroup) this.getParent();
-        viewGroup.removeView(this);
+        if (viewGroup != null)
+            viewGroup.removeView(this);
     }
 
 

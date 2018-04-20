@@ -38,9 +38,12 @@ public class XsSplashHelper {
         if (xsSplashView == null)
             return;
         xsSplashView.forceDismiss();
-        xsSplashView = null;
+        clear();
     }
 
+    public static void clear(){
+        xsSplashView = null;
+    }
 
     public static class Builder {
 

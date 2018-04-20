@@ -5,10 +5,26 @@
     android:layout_height="match_parent"
     tools:context="com.xs.splash.MainActivity">
 
-    <TextView
+
+    <Button
+        android:id="@+id/btn_show_splash"
         android:layout_centerInParent="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="广告闪页" />
+        android:text="Step2:Show Splash"
+        android:textAllCaps="false"
+        android:onClick="showSplash"
+        tools:ignore="HardcodedText" />
+
+    <Button
+        android:layout_marginTop="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/btn_show_splash"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Step1:Update local Splash"
+        android:onClick="updateLocalSplash"
+        android:textAllCaps="false"
+        tools:ignore="HardcodedText" />
 
 </RelativeLayout>

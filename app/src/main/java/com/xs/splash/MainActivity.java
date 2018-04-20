@@ -3,6 +3,7 @@ package com.xs.splash;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.ScaleAnimation;
 
@@ -15,6 +16,16 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        XsSplashHelper.destroy();
+    }
+
+    public void showSplash(View view) {
         ScaleAnimation myAnimation_Scale;
         myAnimation_Scale =new ScaleAnimation(1f, 0f, 1f, 0f,
                 Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
@@ -33,24 +44,20 @@ public class MainActivity extends AppCompatActivity {
                 .listenr(new XsSplashView.OnClickSplashListener() {
                     @Override
                     public void jumpOver() {
-                        Log.e("info","MainActivity:-> ");
+                        Log.e("info","jumpOver:-> ");
                     }
 
                     @Override
                     public void clickSplash(String link) {
-                        Log.e("info","MainActivity:-> ");
+                        Log.e("info","clickSplash:-> ");
                         WebActivity.start(MainActivity.this,link);
                     }
                 })
                 .build().show();
-
-        XsSplashHelper.downLoadSplash(this,"http://pic.58pic.com/58pic/14/64/56/25h58PIC3eG_1024.jpg",
-                "https://simonrepo.github.io");
     }
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        XsSplashHelper.destroy();
+    public void updateLocalSplash(View view) {
+        XsSplashHelper.downLoadSplash(this,"http://pic.58pic.com/58pic/14/64/56/25h58PIC3eG_1024.jpg",
+                "https://simonrepo.github.io");
     }
 }
