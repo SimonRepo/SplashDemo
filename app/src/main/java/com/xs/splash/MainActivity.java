@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         XsSplashHelper.getBuilder(this)
                 .link("https://simonrepo.github.io")
 //                .defaultRes(R.mipmap.ic_launcher)//若不设置默认图 且本地无广告的情况下 则不会显示广告页
-//                .countDown(5)//若不设置 则默认倒计时3S
+                .countDown(5)//若不设置 则默认倒计时3S
 //                .textSizeDp(10)
 //                .textBackgroundSizeDp(35)
 //                .textMarginDp(12)
