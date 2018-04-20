@@ -1,4 +1,4 @@
 Android SplashView
 ==================
 
-![image](https://github.com/SimonRepo/SplashDemo/master/image/device-2018-04-20-170322.gif)
+![](https://github.com/SimonRepo/SplashDemo/raw/master/screenshots/device-2018-04-20-170322.gif)
