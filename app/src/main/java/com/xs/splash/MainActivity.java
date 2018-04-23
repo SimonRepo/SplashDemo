@@ -16,7 +16,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
     }
 
     @Override
@@ -32,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         myAnimation_Scale.setDuration(1000);
 
         XsSplashHelper.getBuilder(this)
-                .link("https://simonrepo.github.io")
+//                .link("https://simonrepo.github.io")
 //                .defaultRes(R.mipmap.ic_launcher)//若不设置默认图 且本地无广告的情况下 则不会显示广告页
                 .countDown(5)//若不设置 则默认倒计时3S
 //                .textSizeDp(10)
