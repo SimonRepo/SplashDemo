@@ -64,7 +64,4 @@ Gradle:
 compile 'com.xs.splashview:splashview:1.0.2'
 ```  
 
-Demo File: [AutoScrollViewPagerSingleDemo.java](https://github.com/Trinea/android-demo/blob/master/src/cn/trinea/android/demo/AutoScrollViewPagerDemo.java)  
-Demo Project: [android-demo](https://github.com/Trinea/android-demo)  
-
 
